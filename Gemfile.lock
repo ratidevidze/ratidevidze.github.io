@@ -78,11 +78,11 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.5.2)
     mercenary (0.3.6)
+    mini_portile2 (2.6.1)
     minitest (5.15.0)
     namae (1.1.1)
-    nokogiri (1.12.5-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.12.5-x86_64-darwin)
+    nokogiri (1.12.5)
+      mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -100,7 +100,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     thread_safe (0.3.6)
-    tzinfo (1.2.9)
+    tzinfo (1.2.11)
       thread_safe (~> 0.1)
     unicode_utils (1.4.0)
     zeitwerk (2.5.1)
@@ -108,6 +108,7 @@ GEM
 PLATFORMS
   arm64-darwin-23
   x86_64-darwin-23
+  x86_64-linux
 
 DEPENDENCIES
   jekyll (= 3.7.3)
