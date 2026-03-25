@@ -9,55 +9,52 @@
   <title>Rati Devidze</title>
   <meta name="description" content="Academic website of Rati Devidze. Based on [*folio](https://github.com/bogoli/-folio) design.">
 
-  <!-- Bootstrap & MDB -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.17.0/css/mdb.min.css" integrity="sha256-/SwJ2GDcEt5382i8zqDwl36VJGECxEoIcBIuoLmLR4g=" crossorigin="anonymous" />
-
-  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
 
-  <!-- Styles -->
   <link rel="shortcut icon" href="/assets/img/favicon.ico">
   <link rel="stylesheet" href="/assets/css/main.css">
-
   <link rel="canonical" href="/">
+
+  <style>
+    /* Keep image responsive and right-aligned on all screen sizes */
+    .profile img {
+      width: 100%;
+      max-width: 420px;
+    }
+    /* On very small screens, reduce news font size so text fits in narrower column */
+    @media (max-width: 575.98px) {
+      .news table {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="fixed-top-nav sticky-bottom-footer">
 
-  <!-- Header -->
   <header>
     <nav id="navbar" class="navbar navbar-light bg-white navbar-expand-sm fixed-top">
       <div class="container">
-
         <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar top-bar"></span>
           <span class="icon-bar middle-bar"></span>
           <span class="icon-bar bottom-bar"></span>
         </button>
-
         <div class="collapse navbar-collapse text-right" id="navbarNav">
           <ul class="navbar-nav ml-auto flex-nowrap">
             <li class="nav-item active">
-              <a class="nav-link" href="/">
-                about
-                <span class="sr-only">(current)</span>
-              </a>
+              <a class="nav-link" href="/">about<span class="sr-only">(current)</span></a>
             </li>
-
-            <li class="nav-item ">
-              <a class="nav-link" href="/publications/">
-                publications
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="/publications/">publications</a>
             </li>
-
-            <li class="nav-item ">
-              <a class="nav-link" href="/teaching/">
-                teaching
-              </a>
+            <li class="nav-item">
+              <a class="nav-link" href="/teaching/">teaching</a>
             </li>
           </ul>
         </div>
@@ -65,7 +62,6 @@
     </nav>
   </header>
 
-  <!-- Content -->
   <div class="container mt-5">
     <div class="post">
 
@@ -75,25 +71,35 @@
       </header>
 
       <article>
+        <!--
+          THE FIX:
+          Original used only `col-md-7` / `col-md-4`, which collapse to full-width
+          stacked layout on screens narrower than 768px (mobile).
+          
+          The fix adds `col-7` and `col-5` (no breakpoint = applies at ALL sizes),
+          so the two-column layout is preserved on mobile too.
+          col-7 + col-5 = 12, matching the 7:5 visual split on small screens.
+          On md+ screens, col-md-7 / col-md-4 take over for the wider layout.
+        -->
         <div class="row">
-          <!-- LEFT COLUMN -->
-          <div class="col-md-7">
+
+          <!-- LEFT COLUMN: text, 7/12 wide on all screens -->
+          <div class="col-7 col-md-7">
             <p>
-              I am a Reinforcement Learning & Machine Learning Engineer at <a href="https://minds.ai">minds.ai</a>  focused on applying Reinforcement Learning (RL) and Preference Learning to semiconductor fabrication (FAB) optimization.
-              </p>
-              <p>
-               I completed my PhD in <a href="https://machineteaching.mpi-sws.org/index.html">Machine Teaching group</a> of
+              I am a Reinforcement Learning &amp; Machine Learning Engineer at <a href="https://minds.ai">minds.ai</a> focused on applying Reinforcement Learning (RL) and Preference Learning to semiconductor fabrication (FAB) optimization.
+            </p>
+            <p>
+              I completed my PhD in <a href="https://machineteaching.mpi-sws.org/index.html">Machine Teaching group</a> of
               <a href="https://www.mpi-sws.org/">Max Planck Institute for Software Systems: MPI-SWS</a>,
               in Saarbrücken, Germany. I was also a member of the
-              <a href="https://www.graduateschool-computerscience.de/">Saarbrücken Graduate School of Computer Science</a>. My doctoral research was supervised by <a href="https://machineteaching.mpi-sws.org/adishsingla.html"> Prof. Adish Singla</a>. 
+              <a href="https://www.graduateschool-computerscience.de/">Saarbrücken Graduate School of Computer Science</a>. My doctoral research was supervised by <a href="https://machineteaching.mpi-sws.org/adishsingla.html">Prof. Adish Singla</a>.
             </p>
             <p>
-              My work centers on developing principled learning frameworks for complex, stochastic, and highly constrained environments. In particular, I study reward design  aiming to construct informative and interpretable signals that guide agent behavior toward optimal decisions. These approaches enable efficient learning in settings where explicit reward specification is challenging, while aligning agent behavior with domain-specific objectives such as throughput maximization, cycle time reduction, and resource efficiency. 
+              My work centers on developing principled learning frameworks for complex, stochastic, and highly constrained environments. In particular, I study reward design aiming to construct informative and interpretable signals that guide agent behavior toward optimal decisions. These approaches enable efficient learning in settings where explicit reward specification is challenging, while aligning agent behavior with domain-specific objectives such as throughput maximization, cycle time reduction, and resource efficiency.
             </p>
-              <p>
+            <p>
               More broadly, my research interests include Reinforcement Learning and its subfields—such as reward design, inverse reinforcement learning, and meta-reinforcement learning as well as preference learning for sequential decision-making.
             </p>
-
             <p style="margin-bottom: 1rem;">
               For more information about me, please find my
               <a href="/assets/pdf/Rati_Devidze_CV.pdf"><strong>[C.V.]</strong></a>.
@@ -101,19 +107,16 @@
 
             <div class="news">
               <h2 style="margin-top: 0.5rem;">news</h2>
-
               <div class="table-responsive">
                 <table class="table table-sm table-borderless">
                   <tr>
-                      <th scope="row">March 2025</th>
-                      <td>
-                          I successfully defended my PhD.
-                      </td>
-                    </tr>
-                    <th scope="row">June 2024</th>
-                    <td>I joined <strong><a href="https://minds.ai/">minds.ai</a><strong>.</td>
+                    <th scope="row">March 2025</th>
+                    <td>I successfully defended my PhD.</td>
                   </tr>
                   <tr>
+                    <th scope="row">June 2024</th>
+                    <td>I joined <strong><a href="https://minds.ai/">minds.ai</a></strong>.</td>
+                  </tr>
                   <tr>
                     <th scope="row">May 2024</th>
                     <td>
@@ -122,46 +125,28 @@
                       </strong>.
                     </td>
                   </tr>
-
                   <tr>
                     <th scope="row">Jan 19, 2024</th>
                     <td>
-                      Our paper
-                      <a href="https://proceedings.mlr.press/v238/li24i/li24i.pdf">
-                        Ethics in Action: Training Reinforcement Learning Agent for Moral Decision-making In Text-based Adventure Games
-                      </a>
-                      was accepted to AISTATS'24.
+                      Our paper <a href="https://proceedings.mlr.press/v238/li24i/li24i.pdf">Ethics in Action: Training Reinforcement Learning Agent for Moral Decision-making In Text-based Adventure Games</a> was accepted to AISTATS'24.
                     </td>
                   </tr>
-
                   <tr>
                     <th scope="row">Dec 15, 2023</th>
                     <td>
-                      Our paper
-                      <a href="https://arxiv.org/abs/2402.07019">Informativeness of Reward Functions in Reinforcement Learning</a>
-                      was accepted to AAMAS'24.
+                      Our paper <a href="https://arxiv.org/abs/2402.07019">Informativeness of Reward Functions in Reinforcement Learning</a> was accepted to AAMAS'24.
                     </td>
                   </tr>
-
                   <tr>
                     <th scope="row">Sep 14, 2022</th>
                     <td>
-                      Our paper
-                      <a href="https://openreview.net/attachment?id=W7HvKO1erY&name=supplementary_material">
-                        Exploration-Guided Reward Shaping for Reinforcement Learning under Sparse Rewards
-                      </a>
-                      was accepted to NeurIPS'22.
+                      Our paper <a href="https://openreview.net/attachment?id=W7HvKO1erY&name=supplementary_material">Exploration-Guided Reward Shaping for Reinforcement Learning under Sparse Rewards</a> was accepted to NeurIPS'22.
                     </td>
                   </tr>
-
                   <tr>
                     <th scope="row">Sep 28, 2021</th>
                     <td>
-                      Our paper
-                      <a href="https://machineteaching.mpi-sws.org/files/papers/neurips21_explicable-reward-design.pdf">
-                        Explicable Reward Design for Reinforcement Learning Agents
-                      </a>
-                      was accepted to NeurIPS'21.
+                      Our paper <a href="https://machineteaching.mpi-sws.org/files/papers/neurips21_explicable-reward-design.pdf">Explicable Reward Design for Reinforcement Learning Agents</a> was accepted to NeurIPS'21.
                     </td>
                   </tr>
                 </table>
@@ -169,12 +154,11 @@
             </div>
           </div>
 
-          <!-- RIGHT COLUMN -->
-          <div class="profile col-sm-4 text-center">
+          <!-- RIGHT COLUMN: photo — col-5 keeps it right on mobile too -->
+          <div class="profile col-5 col-md-4 text-center">
             <img
               class="z-depth-1 rounded"
               src="/assets/img/bb9591b3.jpg"
-              style="width: 100%; max-width: 420px;"
               alt="Rati Devidze">
 
             <div class="address mt-3">
@@ -186,49 +170,32 @@
                   <a href="https://scholar.google.com/citations?user=y-pLgHgAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
                 </span>
               </div>
-
               <p>Campus E1.5, Room 336</p>
               <p>Max Planck Institute for Software Systems</p>
               <p>66123, Saarbrücken</p>
             </div>
           </div>
+
         </div>
       </article>
     </div>
   </div>
 
-  <!-- Load Core and Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js" integrity="sha256-OH05DFHUWzr725HmuHo3pnuvUUn+TJuj8/Qz9xytFEw=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.17.0/js/mdb.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-  <!-- Load Common JS -->
   <script src="/assets/js/common.js"></script>
 
-  <!-- Code Syntax Highlighting -->
   <link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
-
-  <!-- Load KaTeX -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung=" crossorigin="anonymous" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js" integrity="sha256-F/Xda58SPdcUCr+xhSGz9MA2zQBPb0ASEYKohl8UCHc=" crossorigin="anonymous"></script>
   <script src="/assets/js/katex.js"></script>
-
-  <!-- Load Masonry & imagesLoaded -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-
-  <!-- Project Cards Layout -->
   <script type="text/javascript">
-    var $grid = $('.grid').masonry({
-      gutter: 10,
-      horizontalOrder: true,
-      itemSelector: '.grid-item',
-    });
-
-    $grid.imagesLoaded().progress(function() {
-      $grid.masonry('layout');
-    });
+    var $grid = $('.grid').masonry({ gutter: 10, horizontalOrder: true, itemSelector: '.grid-item' });
+    $grid.imagesLoaded().progress(function() { $grid.masonry('layout'); });
   </script>
 
 </body>
